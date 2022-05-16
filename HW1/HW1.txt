@@ -1,0 +1,115 @@
+for i in sales.index:
+    if(sales.loc[i,"Product.1 type"] not in ProductType ):
+        sales.drop(i, inplace = True)
+        print(i)
+
+
+ProductType = ['Climbing Accessories','Cooking Gear','First Aid'
+               'Golf Accessories','Insect Repellents',
+               'Sleeping Bags']
+
+
+
+p1_r1_c1_n1=p1_r1_c1[~p1_r1_c1['type.1'].isna()].copy(deep=True)
+    
+p1_r1_c2_n1=p1_r1_c2[~p1_r1_c2['Retailer'].isna()].copy(deep=True)
+
+p1_r2_c1_n1=p1_r2_c1[~p1_r2_c1['Retailer'].isna()].copy(deep=True)
+
+p1_r2_c2_n1=p1_r2_c2[~p1_r2_c2['country'].isna()].copy(deep=True)
+
+
+p2_r1_c1_n1=p2_r1_c1[~p2_r1_c1['Retailer'].isna()].copy(deep=True)
+
+p2_r1_c2_n1=p2_r1_c2[~p2_r1_c2['country'].isna()].copy(deep=True)
+
+p2_r2_c1_n1=p2_r2_c1[~p2_r2_c1['country'].isna()].copy(deep=True)
+
+p2_r2_c2_n1=p2_r2_c2[~p2_r2_c2['Revenue'].isna()].copy(deep=True)
+
+
+p3_r1_c1_n1=p3_r1_c1[~p3_r1_c1['country'].isna()].copy(deep=True)
+
+p3_r1_c2_n1=p3_r1_c2[~p3_r1_c2['Revenue'].isna()].copy(deep=True)
+
+p3_r2_c1_n1=p3_r2_c1[~p3_r2_c1['Revenue'].isna()].copy(deep=True)
+
+p3_r2_c2_n1=p3_r2_c2[~p3_r2_c2['Planned'].isna()].copy(deep=True)
+
+
+p4_r1_c1_n1=p4_r1_c1[~p4_r1_c1['Revenue'].isna()].copy(deep=True)
+
+p4_r1_c2_n1=p4_r1_c2[~p4_r1_c2['Planned'].isna()].copy(deep=True)
+
+p4_r2_c1_n1=p4_r2_c1[~p4_r2_c1['Planned'].isna()].copy(deep=True)
+
+p4_r2_c2_n1=p4_r2_c2[~p4_r2_c2['revenue'].isna()].copy(deep=True)
+
+
+p5_r1_c1_n1=p5_r1_c1[~p5_r1_c1['Planned'].isna()].copy(deep=True)
+
+p5_r1_c2_n1=p5_r1_c2[~p5_r1_c2['revenue'].isna()].copy(deep=True)
+
+p5_r2_c1_n1=p5_r2_c1[~p5_r2_c1['revenue'].isna()].copy(deep=True)
+
+p5_r2_c2_n1=p5_r2_c2[~p5_r2_c2['Product.3'].isna()].copy(deep=True)
+
+
+
+p6_r1_c1_n1=p6_r1_c1[~p6_r1_c1['revenue'].isna()].copy(deep=True)
+
+p6_r1_c2_n1=p6_r1_c2[~p6_r1_c2['Product.3'].isna()].copy(deep=True)
+
+p6_r2_c1_n1=p6_r2_c1[~p6_r2_c1['Product.3'].isna()].copy(deep=True)
+
+p6_r2_c2_n1=p6_r2_c2[~p6_r2_c2['cost'].isna()].copy(deep=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p1_r1_c1_n1['Revenue.new']=p1_r1_c1_n1['type.1']
+p1_r1_c1_n1['Planned revenue']=p1_r1_c1_n1['Retailer']
+p1_r1_c1_n1['Product.3 cost']=p1_r1_c1_n1['country']
+p1_r1_c1_n1['Quantity.new']=p1_r1_c1_n1['Revenue']
+p1_r1_c1_n1['Unit cost.1']=p1_r1_c1_n1['Planned']
+p1_r1_c1_n1['Unit.1 price']=p1_r1_c1_n1['revenue']
+p1_r1_c1_n1['Gross profit']=p1_r1_c1_n1['Product.3']
+p1_r1_c1_n1['Unit sale price.1']=p1_r1_c1_n1['cost']
+
+p1_r1_c2_n1['Revenue.new']=p1_r1_c2_n1['Retailer']
+p1_r1_c2_n1['Planned revenue']=p1_r1_c2_n1['country']
+p1_r1_c2_n1['Product.3 cost']=p1_r1_c2_n1['Revenue']
+p1_r1_c2_n1['Quantity.new']=p1_r1_c2_n1['Planned']
+p1_r1_c2_n1['Unit cost.1']=p1_r1_c2_n1['revenue']
+p1_r1_c2_n1['Unit.1 price']=p1_r1_c2_n1['Product.3']
+p1_r1_c2_n1['Gross profit']=p1_r1_c2_n1['cost']
+p1_r1_c2_n1['Unit sale price.1']=p1_r1_c2_n1['Quantity']
+
+p1_r2_c1_n1['Revenue.new']=p1_r2_c1_n1['Retailer']
+p1_r2_c1_n1['Planned revenue']=p1_r2_c1_n1['country']
+p1_r2_c1_n1['Product.3 cost']=p1_r2_c1_n1['Revenue']
+p1_r2_c1_n1['Quantity.new']=p1_r2_c1_n1['Planned']
+p1_r2_c1_n1['Unit cost.1']=p1_r2_c1_n1['revenue']
+p1_r2_c1_n1['Unit.1 price']=p1_r2_c1_n1['Product.3']
+p1_r2_c1_n1['Gross profit']=p1_r2_c1_n1['cost']
+p1_r2_c1_n1['Unit sale price.1']=p1_r2_c1_n1['Quantity']
+
+p1_r2_c2_n1['Revenue.new']=p1_r2_c2_n1['country']
+p1_r2_c2_n1['Planned revenue']=p1_r2_c2_n1['Revenue']
+p1_r2_c2_n1['Product.3 cost']=p1_r2_c2_n1['Planned']
+p1_r2_c2_n1['Quantity.new']=p1_r2_c2_n1['revenue']
+p1_r2_c2_n1['Unit cost.1']=p1_r2_c2_n1['Product.3']
+p1_r2_c2_n1['Unit.1 price']=p1_r2_c2_n1['cost']
+p1_r2_c2_n1['Gross profit']=p1_r2_c2_n1['Quantity']
+p1_r2_c2_n1['Unit sale price.1']=p1_r2_c2_n1['Unit']
+
